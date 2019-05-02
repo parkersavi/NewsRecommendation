@@ -1,7 +1,8 @@
-package com.ibm;
+package com.ibm.data;
 
 import com.ibm.api.requests.Employee;
 import com.ibm.api.requests.NewsHeadline;
+import com.ibm.tools.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

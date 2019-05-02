@@ -1,6 +1,6 @@
 package com.ibm.data;
 
-import com.ibm.Constants;
+import com.ibm.tools.Constants;
 import com.ibm.api.requests.Employee;
 import com.ibm.tools.Util;
 import org.slf4j.Logger;

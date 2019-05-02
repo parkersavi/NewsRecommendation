@@ -4,6 +4,7 @@ package com.ibm; /**
 
 import com.ibm.api.requests.Employee;
 import com.ibm.api.requests.NewsHeadline;
+import com.ibm.data.DataLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ResourceLoader;
 
-import javax.xml.crypto.Data;
 import java.util.List;
 
 @SpringBootApplication
