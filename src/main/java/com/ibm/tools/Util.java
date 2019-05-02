@@ -29,7 +29,7 @@ public class Util {
         int numTags = rand.nextInt(2)+1; //we don't want zero hence adding 1 (we will get either 1 or 2)
         List<String> newsTags = new ArrayList<>();
         for (int i = 0; i < numTags; i++) {
-            String interest = Constants.NEWS_TAGS.get(rand.nextInt(Constants.NEWS_TAGS.size()));
+            String interest = AppConstants.NEWS_TAGS.get(rand.nextInt(AppConstants.NEWS_TAGS.size()));
            //no duplicates
             if(!newsTags.toString().contains(interest)) {
                 newsTags.add(interest);

@@ -1,6 +1,6 @@
 package com.ibm.data;
 
-import com.ibm.tools.Constants;
+import com.ibm.tools.AppConstants;
 import com.ibm.api.requests.NewsHeadline;
 import com.ibm.tools.Util;
 import org.slf4j.Logger;
@@ -40,7 +40,7 @@ public class NewsHeadlinesGenerator {
 
     public static void generateNewsHeadlines() {
 
-        try (BufferedWriter newsHeadlinesWriter = new BufferedWriter(new FileWriter(Constants.NEWS_HEADLINES_FILENAME))) {
+        try (BufferedWriter newsHeadlinesWriter = new BufferedWriter(new FileWriter(AppConstants.NEWS_HEADLINES_FILENAME))) {
             for (int i = 0; i < NUM_NEWS_HEADLINES; i++) {
 
                 NewsHeadline newsHeadline =

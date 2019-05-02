@@ -2,7 +2,7 @@ package com.ibm.data;
 
 import com.ibm.api.requests.Employee;
 import com.ibm.api.requests.NewsHeadline;
-import com.ibm.tools.Constants;
+import com.ibm.tools.AppConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +30,7 @@ public class DataLoader implements ResourceLoaderAware {
 
     public List<Employee> readEmployeesFromFile() {
         log.info("Loading employee list ");
-        String fileName = Constants.EMPLOYEES_FILENAME;
+        String fileName = AppConstants.EMPLOYEES_FILENAME;
         List<Employee> employeeList = new ArrayList<>();
         try (Stream<String> stream = new BufferedReader(
                 new InputStreamReader(
@@ -60,7 +60,7 @@ public class DataLoader implements ResourceLoaderAware {
     public List<NewsHeadline> readNewsHeadlinesFromFile() {
         log.info("Loading News Headlines");
         List<NewsHeadline> newsHeadlinesList = new ArrayList<>();
-        String fileName = Constants.NEWS_HEADLINES_FILENAME;
+        String fileName = AppConstants.NEWS_HEADLINES_FILENAME;
         try (Stream<String> stream = new BufferedReader(
                 new InputStreamReader(
                         resourceLoader.getResource("classpath:"+fileName).getInputStream()

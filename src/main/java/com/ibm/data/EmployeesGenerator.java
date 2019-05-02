@@ -1,6 +1,6 @@
 package com.ibm.data;
 
-import com.ibm.tools.Constants;
+import com.ibm.tools.AppConstants;
 import com.ibm.api.requests.Employee;
 import com.ibm.tools.Util;
 import org.slf4j.Logger;
@@ -37,7 +37,7 @@ public class EmployeesGenerator {
 
     public static void generateEmployees() {
 
-        try(BufferedWriter employeesWriter = new BufferedWriter(new FileWriter(Constants.EMPLOYEES_FILENAME))) {
+        try(BufferedWriter employeesWriter = new BufferedWriter(new FileWriter(AppConstants.EMPLOYEES_FILENAME))) {
             for (int i = 0; i < NUM_EMPLOYEES; i++) {
                 int employeeId = i;
                 //                TODO ASSSUMING THAT ALL EMPLOYEES HAVE INTERESTS
