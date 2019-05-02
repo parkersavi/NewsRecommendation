@@ -10,6 +10,7 @@ import java.util.Objects;
  * Created by parth on 5/1/19.
  */
 public class NewsHeadline {
+
     private static final Logger log = LoggerFactory.getLogger(NewsHeadline.class);
 
     private int id;
@@ -104,10 +105,10 @@ public class NewsHeadline {
     public String toString() {
         return  id+"\t"+
                 title + "\t" +
-                        newsAbstract + "\t" +
-                        language + "\t" +
-                        publicationDate + "\t" +
-                        author + "\t" +
+                newsAbstract + "\t" +
+                language + "\t" +
+                publicationDate + "\t" +
+                author + "\t" +
                 location+"\t"+
                 String.join(",", tags);
     }

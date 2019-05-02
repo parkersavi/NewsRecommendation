@@ -29,6 +29,7 @@ public class EmployeesGenerator {
     private static final List<String> EMPLOYEE_NAMES = Arrays.asList("Parth","Jon","Sam");
 
     public static void main(String[] args) {
+
         log.info("Generating Employee Records!");
         generateEmployees();
         log.info("Finished Generating "+ NUM_EMPLOYEES +" Employee Records!");
@@ -38,18 +39,20 @@ public class EmployeesGenerator {
     public static void generateEmployees() {
 
         try(BufferedWriter employeesWriter = new BufferedWriter(new FileWriter(AppConstants.EMPLOYEES_FILENAME))) {
+            //go through all the employees and build employees objects and load them in memory
             for (int i = 0; i < NUM_EMPLOYEES; i++) {
+
                 int employeeId = i;
-                //                TODO ASSSUMING THAT ALL EMPLOYEES HAVE INTERESTS
                 String uniqueEmployeeName = EMPLOYEE_NAMES.get(rand.nextInt(EMPLOYEE_NAMES.size())) + "_"+employeeId;
+
                 Employee employeesRecord =
                         new Employee
-                                (employeeId,
-                                uniqueEmployeeName,
-                                LOCATIONS.get(rand.nextInt(EMPLOYEE_NAMES.size())),
-                                JOB_ROLES.get(rand.nextInt(JOB_ROLES.size())),
-                                DEPARTMENT.get(rand.nextInt(DEPARTMENT.size())),
-                                        Util.getRandomNewsTags()
+                                (   employeeId,
+                                    uniqueEmployeeName,
+                                    LOCATIONS.get(rand.nextInt(EMPLOYEE_NAMES.size())),
+                                    JOB_ROLES.get(rand.nextInt(JOB_ROLES.size())),
+                                    DEPARTMENT.get(rand.nextInt(DEPARTMENT.size())),
+                                    Util.getRandomNewsTags()
                                 );
                 employeesWriter.write(employeesRecord.toString());
                 employeesWriter.write("\n");
@@ -57,6 +60,7 @@ public class EmployeesGenerator {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
 

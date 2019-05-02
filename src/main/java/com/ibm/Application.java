@@ -28,10 +28,10 @@ public class Application {
     public static void main(String[] args) throws Exception
     {
         SpringApplication.run(Application.class, args);
+
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-
         DataLoader dataLoader = (DataLoader) context.getBean("customResourceLoader");
-
+        //load employees and news headlines in memory
         employeesList = dataLoader.readEmployeesFromFile();
         newsHeadlinesList = dataLoader.readNewsHeadlinesFromFile();
     }

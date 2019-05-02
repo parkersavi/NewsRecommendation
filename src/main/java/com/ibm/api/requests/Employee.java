@@ -9,8 +9,8 @@ import java.util.List;
  * Created by parth on 5/1/19.
  */
 public class Employee {
-    private static final Logger log = LoggerFactory.getLogger(Employee.class);
 
+    private static final Logger log = LoggerFactory.getLogger(Employee.class);
 
     private int id;
     private String name;
@@ -91,6 +91,6 @@ public class Employee {
          location+"\t"+
          jobRole+"\t"+
          department+"\t"+
-                 String.join(",", interests);
+         String.join(",", interests);
     }
 }

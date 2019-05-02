@@ -27,44 +27,46 @@ public class DataLoader implements ResourceLoaderAware {
     private ResourceLoader resourceLoader;
 
 
-
     public List<Employee> readEmployeesFromFile() {
         log.info("Loading employee list ");
+
         String fileName = AppConstants.EMPLOYEES_FILENAME;
         List<Employee> employeeList = new ArrayList<>();
+
         try (Stream<String> stream = new BufferedReader(
-                new InputStreamReader(
-                        resourceLoader.getResource("classpath:"+fileName).getInputStream()
-                )).lines()){
+                                            new InputStreamReader(
+                                                resourceLoader.getResource("classpath:" + fileName).getInputStream())).lines()) {
+            employeeList =
+                    stream.map(line -> {
+                        String[] values = line.split("\t");
+                        return new Employee(
+                                Integer.parseInt(values[0]),
+                                values[1],
+                                values[2],
+                                values[3],
+                                values[4],
+                                Arrays.asList(values[5].split(",")));
 
-            employeeList = stream.map(line -> {
-                String[] values = line.split("\t");
-                return new Employee(
-                        Integer.parseInt(values[0]),
-                        values[1],
-                        values[2],
-                        values[3],
-                        values[4],
-                        Arrays.asList(values[5].split(",")));
-
-            }).collect(Collectors.toList());
+                    }).collect(Collectors.toList());
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        log.info("Done Loading "+employeeList.size());
+
+        log.info("Done Loading " + employeeList.size());
         return employeeList;
     }
 
 
     public List<NewsHeadline> readNewsHeadlinesFromFile() {
         log.info("Loading News Headlines");
+
         List<NewsHeadline> newsHeadlinesList = new ArrayList<>();
         String fileName = AppConstants.NEWS_HEADLINES_FILENAME;
+
         try (Stream<String> stream = new BufferedReader(
-                new InputStreamReader(
-                        resourceLoader.getResource("classpath:"+fileName).getInputStream()
-                )).lines()){
+                                            new InputStreamReader(
+                                                    resourceLoader.getResource("classpath:" + fileName).getInputStream())).lines()) {
 
             newsHeadlinesList = stream.map(line -> {
                 String[] values = line.split("\t");
@@ -83,12 +85,12 @@ public class DataLoader implements ResourceLoaderAware {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        log.info("Done Loading "+newsHeadlinesList.size());
+        log.info("Done Loading " + newsHeadlinesList.size());
         return newsHeadlinesList;
     }
 
     @Override
     public void setResourceLoader(ResourceLoader resourceLoader) {
-            this.resourceLoader = resourceLoader;
+        this.resourceLoader = resourceLoader;
     }
 }
