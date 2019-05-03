@@ -71,6 +71,7 @@ Under **com.ibm.data** you can find **EmployeesGenerator** and **NewsHeadlinesGe
         that article to that employee
         
      AND
+     
      2) *employees location*  and *article location*
         eg: If employee's location is USA and article location is USA as well, we will match 
         that article to that employee
