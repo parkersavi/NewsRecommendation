@@ -63,7 +63,7 @@ Under **com.ibm.data** you can find **EmployeesGenerator** and **NewsHeadlinesGe
 
 
 ## Here's how alorithm works:
-1) We load all employees and news headlines in memory by reading text files
+1) We load **10000 employees**  and **3000 news headlines** in memory by reading text files
 2) We filter out all the news headlines by publication date
 3) We go through each and every filtered news headlines and check if an employee is a match based on 
      1) *employee's interests* and *article tags* 
