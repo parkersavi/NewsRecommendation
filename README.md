@@ -43,8 +43,7 @@ Valid values are beetween 0 and 10000
   
      localhost:5000/employee?id=10
 
-Following extra columns were added to the employees and news healines tables 
-employess 
+#### Following extra columns were added to the employees and news healines tables employess 
  1) id - can used anywhere to reference an employee
  2) interests - employees interests for eg: blockchain, ai etc.
 
@@ -59,7 +58,7 @@ Text files **employees.txt** and **news_headlines.txt** can be found under resou
 Under **com.ibm.data** you can find **EmployeesGenerator** and **NewsHeadlinesGenerator** used to generate the above files
 
 
-Here's how alorithm works:
+## Here's how alorithm works:
 1) We load all employees and news headlines in memory by reading text files
 2) We filter out all the news headlines by publication date
 3) We go through each and every filtered news headlines and check if an employee is a match based on 
