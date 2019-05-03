@@ -15,10 +15,10 @@ Uses default date of 2019-04-30. Can be changed to use current date
 #### 2) With Publication Date: 
 ##### Valid dates are between 2019-03-01 and 2019-04-30    
     http://newsheadlines-env.p2ucunbpbt.us-east-1.elasticbeanstalk.com/news?publicationDate=2019-04-12
-The service will return every news headline published on this day to its list of matched employees. I have chosen
-to return a list of employee ids
+**The service will return every news headline published on this day to its list of matched employees. I have chosen
+to return a list of employee ids**
 
-Note, if there is a no match, then employeeIds array will be empty.
+**Note:** if there is a no match, then employeeIds array will be empty.
 
 #### Additionally: 
 
