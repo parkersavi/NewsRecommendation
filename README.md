@@ -1,26 +1,26 @@
-#This News Matching Engine matches news headlines to internal employees 
+# This News Matching Engine matches news headlines to internal employees 
 
-###How to run:
+### How to run:
 Two ways to interact with the application
 1) The application is deployed on AWS
 2) You can run the application locally
 
-####Checking out application deployed on AWS
-#####Usage is: 
-#####1) No Publication Date: 
+#### Checking out application deployed on AWS
+##### Usage is: 
+##### 1) No Publication Date: 
 Uses default date of 2019-04-30. Can be changed to use current date
     
     http://newsheadlines-env.p2ucunbpbt.us-east-1.elasticbeanstalk.com/news
 
-#####2) With Publication Date: 
-######Valid dates are between 2019-03-01 and 2019-04-30    
+##### 2) With Publication Date: 
+###### Valid dates are between 2019-03-01 and 2019-04-30    
     http://newsheadlines-env.p2ucunbpbt.us-east-1.elasticbeanstalk.com/news?publicationDate=2019-04-12
 The service will return every news headline published on this day to its list of matched employees. I have chosen
 to return a list of employee ids
 
 Note, if there is a no match, then employeeIds array will be empty.
 
-####Additionally: 
+#### Additionally: 
 
 You can choose to get employee information using following api call. 
 
@@ -29,7 +29,7 @@ Valid values are beetween 0 and 10000
 
     http://newsheadlines-env.p2ucunbpbt.us-east-1.elasticbeanstalk.com/employee?id=3
 
-##Running the application locally
+## Running the application locally
 1) Go to **NewsRecommendation/deploy** directory. Run the application using following command
     
     
@@ -77,14 +77,14 @@ Here's how alorithm works:
 The algorithm used doesn't grow too much in memory even if more strategies for matching are added. 
 If memory isn't an issue then a faster approach would be to use a hashmap instead of lists.
  
-#Assumptions
+# Assumptions
 1) Every employees as an interest (max upto 2) and a location (country) eg: ai,blockchain AND USA
 2) News Headlines have tags and location eg: blockchain and USA
 3) Data has to be loaded into memory
 4) New Headlines have valid dates between 2019-03-01 to 2019-04-30
 
 
-####There are few other ways we can match news headlines to employees
+#### There are few other ways we can match news headlines to employees
 1) we can keep track of news headline clicks (what interests the employee) and recommend headlines based on his clicks
 2) we can also send articles based on employee's background. For example, if the employee is a engineer vs in business development
 
