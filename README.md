@@ -33,17 +33,17 @@ Valid values are beetween 0 and 10000
 1) Go to **NewsRecommendation/deploy** directory. Run the application using following command
      
      
-     java -jar com.ibm-1.0-SNAPSHOT.jar
+        java -jar com.ibm-1.0-SNAPSHOT.jar
      
 2) If you are running on localhost you can query the data using following 
      
      
-     localhost:5000/news?publicationDate=2019-04-12
+        localhost:5000/news?publicationDate=2019-04-12
      
 3) You can get employee information using employee Id
   
   
-    localhost:5000/employee?id=10
+        localhost:5000/employee?id=10
     
 
 #### Following extra columns were added to the employees and news healines tables 
