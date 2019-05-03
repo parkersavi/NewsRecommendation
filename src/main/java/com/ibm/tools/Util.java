@@ -15,6 +15,7 @@ import java.util.Random;
  */
 public class Util {
     private static final Logger log = LoggerFactory.getLogger(Util.class);
+
     private static Random rand = new Random();
 
     public static Date parseDate(String date) {

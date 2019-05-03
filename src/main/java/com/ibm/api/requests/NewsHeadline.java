@@ -10,6 +10,7 @@ import java.util.Objects;
  * Created by parth on 5/1/19.
  */
 public class NewsHeadline {
+
     private static final Logger log = LoggerFactory.getLogger(NewsHeadline.class);
 
     private int id;

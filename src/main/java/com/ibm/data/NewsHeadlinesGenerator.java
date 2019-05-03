@@ -23,7 +23,6 @@ public class NewsHeadlinesGenerator {
 
     private static final Random rand = new Random();
 
-
     private static final List<String> TITLE = Arrays.asList("2019 Annual Shareholders Meeting", "The Importance of Leadership for PwD");
     private static final List<String> ABSTRACT = Arrays.asList("Lorem ipsum dolor sit amet, consectetur adipiscing elit");
     private static final List<String> LANGUAGE = Arrays.asList("English");
@@ -32,6 +31,7 @@ public class NewsHeadlinesGenerator {
     private static final List<String> LOCATION = Arrays.asList("USA","Brazil","Canada","Germany","Mexico","India","China","South Africa","Netherlands","Italy");
 
     public static void main(String[] args) {
+
         log.info("Generating News Headlines!");
         generateNewsHeadlines();
         log.info("Finished Generating " + NUM_NEWS_HEADLINES + " News Headlines!");

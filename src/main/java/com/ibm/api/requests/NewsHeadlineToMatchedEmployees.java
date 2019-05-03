@@ -9,10 +9,11 @@ import java.util.List;
  * Created by parth on 5/2/19.
  */
 public class NewsHeadlineToMatchedEmployees {
+
     private static final Logger log = LoggerFactory.getLogger(NewsHeadlineToMatchedEmployees.class);
+
     private NewsHeadline newsHeadline;
     private List<Integer> employeeIds;
-
 
     public NewsHeadline getNewsHeadline() {
         return newsHeadline;
