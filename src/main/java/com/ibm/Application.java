@@ -28,16 +28,12 @@ public class Application {
     public static void main(String[] args) throws Exception
     {
         SpringApplication.run(Application.class, args);
-        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        DataLoader dataLoader = (DataLoader) context.getBean("customResourceLoader");
+        DataLoader dataLoader = new DataLoader();
 
         employeesList = dataLoader.readEmployeesFromFile();
         newsHeadlinesList = dataLoader.readNewsHeadlinesFromFile();
     }
-
-
-
 
 
 }

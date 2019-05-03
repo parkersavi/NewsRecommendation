@@ -19,7 +19,7 @@ import java.util.Random;
 public class NewsHeadlinesGenerator {
     private static final Logger log = LoggerFactory.getLogger(NewsHeadlinesGenerator.class);
 
-    private static final int NUM_NEWS_HEADLINES = 3000;
+    private static final int NUM_NEWS_HEADLINES = AppConstants.NUM_NEWS_HEADLINES;
 
     private static final Random rand = new Random();
 
@@ -42,10 +42,9 @@ public class NewsHeadlinesGenerator {
 
         try (BufferedWriter newsHeadlinesWriter = new BufferedWriter(new FileWriter(AppConstants.NEWS_HEADLINES_FILENAME))) {
             for (int i = 0; i < NUM_NEWS_HEADLINES; i++) {
-
                 NewsHeadline newsHeadline =
                         new NewsHeadline
-                                (i,
+                                (       i,
                                         TITLE.get(rand.nextInt(TITLE.size())),
                                         ABSTRACT.get(rand.nextInt(ABSTRACT.size())),
                                         LANGUAGE.get(rand.nextInt(LANGUAGE.size())),

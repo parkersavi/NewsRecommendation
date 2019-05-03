@@ -5,6 +5,7 @@ import com.ibm.api.requests.Employee;
 import com.ibm.tools.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -19,7 +20,7 @@ import java.util.Random;
 public class EmployeesGenerator {
     private static final Logger log = LoggerFactory.getLogger(EmployeesGenerator.class);
 
-    private static final int NUM_EMPLOYEES = 10000;
+    private static final int NUM_EMPLOYEES = AppConstants.NUM_EMPLOYEES;
 
     private static final Random rand = new Random();
 
@@ -40,7 +41,6 @@ public class EmployeesGenerator {
         try(BufferedWriter employeesWriter = new BufferedWriter(new FileWriter(AppConstants.EMPLOYEES_FILENAME))) {
             for (int i = 0; i < NUM_EMPLOYEES; i++) {
                 int employeeId = i;
-                //                TODO ASSSUMING THAT ALL EMPLOYEES HAVE INTERESTS
                 String uniqueEmployeeName = EMPLOYEE_NAMES.get(rand.nextInt(EMPLOYEE_NAMES.size())) + "_"+employeeId;
                 Employee employeesRecord =
                         new Employee

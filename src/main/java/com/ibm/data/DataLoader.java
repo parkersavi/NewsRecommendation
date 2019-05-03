@@ -7,9 +7,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ResourceLoaderAware;
+import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.io.support.ResourcePatternResolver;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,7 +24,7 @@ import java.util.stream.Stream;
 /**
  * Created by parth on 5/2/19.
  */
-public class DataLoader implements ResourceLoaderAware {
+public class DataLoader{
     private static final Logger log = LoggerFactory.getLogger(DataLoader.class);
 
     @Autowired
@@ -34,7 +38,7 @@ public class DataLoader implements ResourceLoaderAware {
         List<Employee> employeeList = new ArrayList<>();
         try (Stream<String> stream = new BufferedReader(
                 new InputStreamReader(
-                        resourceLoader.getResource("classpath:"+fileName).getInputStream()
+                        new PathMatchingResourcePatternResolver(this.getClass().getClassLoader()).getResource("classpath:"+fileName).getInputStream()
                 )).lines()){
 
             employeeList = stream.map(line -> {
@@ -52,7 +56,7 @@ public class DataLoader implements ResourceLoaderAware {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        log.info("Done Loading "+employeeList.size());
+        log.info("Done Loading "+employeeList.size()+" employees");
         return employeeList;
     }
 
@@ -63,7 +67,7 @@ public class DataLoader implements ResourceLoaderAware {
         String fileName = AppConstants.NEWS_HEADLINES_FILENAME;
         try (Stream<String> stream = new BufferedReader(
                 new InputStreamReader(
-                        resourceLoader.getResource("classpath:"+fileName).getInputStream()
+                        new PathMatchingResourcePatternResolver(this.getClass().getClassLoader()).getResource("classpath:"+fileName).getInputStream()
                 )).lines()){
 
             newsHeadlinesList = stream.map(line -> {
@@ -83,12 +87,8 @@ public class DataLoader implements ResourceLoaderAware {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        log.info("Done Loading "+newsHeadlinesList.size());
+        log.info("Done Loading "+newsHeadlinesList.size()+" news headlines");
         return newsHeadlinesList;
     }
 
-    @Override
-    public void setResourceLoader(ResourceLoader resourceLoader) {
-            this.resourceLoader = resourceLoader;
-    }
 }

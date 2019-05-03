@@ -104,10 +104,10 @@ public class NewsHeadline {
     public String toString() {
         return  id+"\t"+
                 title + "\t" +
-                        newsAbstract + "\t" +
-                        language + "\t" +
-                        publicationDate + "\t" +
-                        author + "\t" +
+                newsAbstract + "\t" +
+                language + "\t" +
+                publicationDate + "\t" +
+                author + "\t" +
                 location+"\t"+
                 String.join(",", tags);
     }

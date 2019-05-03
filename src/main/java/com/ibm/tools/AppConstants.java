@@ -8,10 +8,13 @@ import java.util.List;
  */
 public class AppConstants {
 
-    //
-   public static final List<String> NEWS_TAGS = Arrays.asList("AI", "BLOCKCHAIN", "BUSINESS", "GBS", "STOCK", "IOT");
-   public static final String EMPLOYEES_FILENAME = "employees.txt";
-   public static final String NEWS_HEADLINES_FILENAME = "news_headlines.txt";
 
+   public static final List<String> NEWS_TAGS = Arrays.asList("AI", "BLOCKCHAIN", "BUSINESS", "GBS", "STOCK", "IOT");
+
+   public static final String EMPLOYEES_FILENAME = "employees.txt";
+   public static final int NUM_EMPLOYEES = 10000;
+
+   public static final String NEWS_HEADLINES_FILENAME = "news_headlines.txt";
+   public static final int NUM_NEWS_HEADLINES = 3000;
 
 }
