@@ -12,8 +12,8 @@ Uses default date of 2019-04-30. Can be changed to use current date
     
     http://newsheadlines-env.p2ucunbpbt.us-east-1.elasticbeanstalk.com/news
 
-##### 2) With Publication Date: 
-###### Valid dates are between 2019-03-01 and 2019-04-30    
+#### 2) With Publication Date: 
+##### Valid dates are between 2019-03-01 and 2019-04-30    
     http://newsheadlines-env.p2ucunbpbt.us-east-1.elasticbeanstalk.com/news?publicationDate=2019-04-12
 The service will return every news headline published on this day to its list of matched employees. I have chosen
 to return a list of employee ids
@@ -31,23 +31,27 @@ Valid values are beetween 0 and 10000
 
 ## Running the application locally
 1) Go to **NewsRecommendation/deploy** directory. Run the application using following command
-    
-    
+     
+     
      java -jar com.ibm-1.0-SNAPSHOT.jar
+     
 2) If you are running on localhost you can query the data using following 
      
      
      localhost:5000/news?publicationDate=2019-04-12
+     
 3) You can get employee information using employee Id
   
   
-     localhost:5000/employee?id=10
+    localhost:5000/employee?id=10
+    
 
-#### Following extra columns were added to the employees and news healines tables employess 
+#### Following extra columns were added to the employees and news healines tables 
+**employees**
  1) id - can used anywhere to reference an employee
  2) interests - employees interests for eg: blockchain, ai etc.
 
-news_headlines
+**news_headlines**
  1) id - can used anywhere to reference a news article
  2) tag - news headlines tags telling us what the article is about eg: blockchain
  3) location - news headline location eg: USA, Germany etc
